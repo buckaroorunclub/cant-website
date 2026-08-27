@@ -30,14 +30,20 @@ export default function Header() {
       )}
 
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 sm:py-5">
-        <a href="#top" aria-label="CAN'T — home" className="shrink-0">
+        <a
+          href="#top"
+          aria-label="CAN'T — home"
+          className="relative block w-[112px] shrink-0 overflow-hidden sm:w-40"
+          style={{ aspectRatio: "1073 / 214" }}
+        >
           <Image
             src="/images/cant-logo.png"
             alt="CAN'T"
-            width={140}
-            height={140}
+            width={1500}
+            height={1500}
             priority
-            className="h-5 w-auto sm:h-6"
+            className="absolute left-0 top-0 max-w-none"
+            style={{ width: "139.8%", height: "auto", transform: "translate(-14.13%, -41.93%)" }}
           />
         </a>
 
