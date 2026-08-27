@@ -6,37 +6,69 @@ export default function Hero() {
       id="top"
       className="relative flex h-[100svh] min-h-[560px] w-full items-end overflow-hidden bg-black"
     >
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Desktop / tablet — width-relative crop, immune to container aspect-ratio swings */}
         <Image
           src="/images/cant-gathering-wide.jpeg"
           alt=""
-          fill
+          width={5000}
+          height={3335}
           priority
-          sizes="100vw"
-          className="hidden object-cover object-center grayscale sm:block"
+          sizes="260vw"
+          className="absolute left-0 top-0 hidden max-w-none grayscale sm:block"
+          style={{ width: "260%", height: "auto", transform: "translate(0%, -23%)" }}
         />
+        {/* Mobile — separate crop tuned to the vertical photograph */}
         <Image
           src="/images/cant-gathering-vertical.jpeg"
           alt=""
-          fill
+          width={2668}
+          height={4000}
           priority
-          sizes="100vw"
-          className="block object-cover object-top grayscale sm:hidden"
+          sizes="333vw"
+          className="absolute left-0 top-0 max-w-none grayscale sm:hidden"
+          style={{ width: "333%", height: "auto", transform: "translate(0%, -37%)" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-black/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
+        {/* Vertical depth gradient (desktop/tablet) — mood + legibility */}
+        <div className="absolute inset-0 hidden bg-gradient-to-t from-black via-black/30 to-black/10 sm:block" />
+        {/* Vertical depth gradient (mobile) — reaches full black well before the headline so the client's lower body never fights the text for legibility */}
+        <div
+          className="absolute inset-0 sm:hidden"
+          style={{
+            backgroundImage:
+              "linear-gradient(to top, black 0%, black 38%, rgba(0,0,0,0.85) 50%, transparent 68%)",
+          }}
+        />
+        {/* Privacy gradient (desktop/tablet) — dissolves the photograph into black past the client */}
+        <div
+          className="absolute inset-0 hidden sm:block"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, transparent 0%, transparent 58%, rgba(0,0,0,0.92) 68%, black 76%, black 100%)",
+          }}
+        />
+        {/* Privacy gradient (mobile) — tuned separately for the vertical crop */}
+        <div
+          className="absolute inset-0 sm:hidden"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, transparent 0%, transparent 76%, rgba(0,0,0,0.92) 86%, black 92%, black 100%)",
+          }}
+        />
       </div>
 
-      <div className="relative z-10 w-full px-5 pb-8 sm:px-8 sm:pb-20 lg:pb-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-5 text-[11px] tracking-[0.3em] text-grey sm:mb-6">
-            COMING SOON
-          </p>
-          <h1 className="max-w-3xl font-sans text-[15vw] leading-[0.92] font-black tracking-tight text-white sm:text-[9vw] lg:text-[7.5rem]">
-            THEY SAID
-            <br />
-            YOU CAN&apos;T.
-          </h1>
+      <div className="relative z-10 w-full px-5 pb-8 sm:px-8 sm:pb-28 lg:pb-40">
+        <div className="mx-auto flex max-w-7xl justify-end">
+          <div className="text-right">
+            <p className="mb-5 text-[11px] tracking-[0.3em] text-grey sm:mb-6">
+              COMING SOON
+            </p>
+            <h1 className="font-sans text-[15vw] leading-[0.92] font-black tracking-tight text-white sm:text-[9vw] lg:text-[7.5rem]">
+              THEY SAID
+              <br />
+              YOU CAN&apos;T.
+            </h1>
+          </div>
         </div>
 
         {/* Mobile: scroll indicator sits in normal flow beneath the headline, never overlapping it */}

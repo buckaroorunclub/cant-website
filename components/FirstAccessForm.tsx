@@ -56,7 +56,7 @@ export default function FirstAccessForm() {
             setEmail(event.target.value);
             if (status === "invalid") setStatus("idle");
           }}
-          className={`w-full border bg-transparent px-4 py-4 text-sm tracking-[0.05em] text-white placeholder:text-grey-dim focus:outline-none disabled:opacity-50 sm:py-3.5 ${
+          className={`w-full border bg-transparent px-4 py-4 text-base tracking-[0.05em] text-white placeholder:text-grey-dim focus:outline-none disabled:opacity-50 sm:py-3.5 sm:text-sm ${
             status === "invalid" ? "border-white" : "border-line-strong focus:border-white"
           }`}
         />

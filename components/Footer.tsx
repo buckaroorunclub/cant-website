@@ -6,13 +6,19 @@ export default function Footer() {
   return (
     <footer className="border-t border-line bg-black px-5 py-10 sm:px-8 sm:py-12">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
-        <Image
-          src="/images/cant-logo.png"
-          alt="CAN'T"
-          width={120}
-          height={120}
-          className="h-5 w-auto"
-        />
+        <span
+          className="relative block w-[104px] overflow-hidden"
+          style={{ aspectRatio: "1073 / 214" }}
+        >
+          <Image
+            src="/images/cant-logo.png"
+            alt="CAN'T"
+            width={1500}
+            height={1500}
+            className="absolute left-0 top-0 max-w-none"
+            style={{ width: "139.8%", height: "auto", transform: "translate(-14.13%, -41.93%)" }}
+          />
+        </span>
 
         <a
           href={INSTAGRAM_URL}
