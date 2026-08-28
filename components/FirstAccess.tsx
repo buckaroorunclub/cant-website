@@ -14,7 +14,7 @@ export default function FirstAccess() {
         </Reveal>
 
         <Reveal delay={80}>
-          <h2 className="mb-6 text-[13vw] leading-[0.98] font-black tracking-tight text-white sm:text-7xl lg:text-8xl">
+          <h2 className="mb-6 text-[9.5vw] leading-[0.98] font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
             YOU&apos;LL KNOW
             <br />
             BEFORE THEY DO.

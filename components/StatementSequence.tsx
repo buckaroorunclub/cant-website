@@ -6,12 +6,12 @@ export default function StatementSequence() {
       {/* Statement one — oversized, left aligned, nearly edge to edge */}
       <div className="px-4 py-28 sm:px-6 sm:py-36 lg:px-8">
         <Reveal>
-          <h3 className="text-[14vw] leading-[0.88] font-black tracking-tighter text-white sm:text-[9vw] lg:text-[7.5rem]">
-            I CAN&apos;T EXPLAIN
+          <h3 className="text-[8.5vw] leading-[0.88] font-black tracking-tighter text-white sm:text-[9vw] lg:text-[6rem]">
+            THEY DON&apos;T HAVE
             <br />
-            THE VISION TO PEOPLE
+            TO SEE IT.
             <br />
-            WHO CAN&apos;T SEE IT.
+            YOU DO.
           </h3>
         </Reveal>
       </div>

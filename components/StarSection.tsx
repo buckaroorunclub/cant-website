@@ -12,13 +12,13 @@ export default function StarSection() {
       </Reveal>
 
       <div className="relative z-10 flex h-full flex-col justify-end px-5 pb-8 sm:px-8 sm:pb-24 lg:px-16">
-        <Reveal delay={250} className="max-w-[15rem] sm:max-w-md">
+        <Reveal delay={250} className="ml-5 -mt-5 max-w-[15rem] sm:max-w-md">
           <p className="text-3xl leading-[1.05] font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
-            WE ALL CAN
+            THE STAR
             <br />
-            BECOME A{" "}
-            <br className="sm:hidden" />
-            STAR.
+            ISN&apos;T GIVEN.
+            <br />
+            IT&apos;S EARNED.
           </p>
         </Reveal>
       </div>
