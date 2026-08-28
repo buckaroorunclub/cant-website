@@ -6,7 +6,7 @@ export default function StarSection() {
     <section className="relative h-[50vh] min-h-[380px] w-full overflow-hidden bg-black sm:h-[100vh]">
       <Reveal
         variant="scale"
-        className="pointer-events-none absolute -top-[9vw] -right-[11vw] h-[47vw] w-[47vw] text-white/90 sm:-top-[6vw] sm:-right-[6vw] sm:h-[35vw] sm:w-[35vw] lg:-top-[4vw] lg:-right-[4vw] lg:h-[25vw] lg:w-[25vw]"
+        className="pointer-events-none absolute -top-[3vw] -right-[11vw] h-[47vw] w-[47vw] text-white/90 sm:-top-[2.2vw] sm:-right-[6vw] sm:h-[35vw] sm:w-[35vw] lg:-top-[1.5vw] lg:-right-[4vw] lg:h-[25vw] lg:w-[25vw]"
       >
         <StarMark className="h-full w-full" />
       </Reveal>
