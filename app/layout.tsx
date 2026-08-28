@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   title: "CAN'T",
   description:
     "They said you can't. CAN'T exists for the people who built anyway. First drop, first access — no noise.",
+  icons: {
+    icon: "/images/cant-favicon.png",
+    shortcut: "/images/cant-favicon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "CAN'T",
     description: "They said you can't. CAN'T exists for the people who built anyway.",
