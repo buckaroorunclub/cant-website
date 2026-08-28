@@ -28,7 +28,7 @@ export default function Manifesto() {
           </Reveal>
         </div>
 
-        <Reveal delay={240} className="mt-16 flex justify-end sm:mt-24">
+        <Reveal delay={240} className="mt-8 flex justify-end pr-4 sm:mt-24 sm:pr-0">
           <p className="max-w-xs text-right font-serif text-2xl leading-snug text-white/75 italic sm:max-w-sm sm:text-3xl">
             And refused
             <br />

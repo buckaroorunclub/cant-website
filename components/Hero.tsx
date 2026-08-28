@@ -57,13 +57,13 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 w-full px-5 pb-8 sm:px-8 sm:pb-28 lg:pb-40">
+      <div className="relative z-10 w-full px-5 pb-[calc(2rem+12svh)] sm:px-8 sm:pb-28 lg:pb-40">
         <div className="mx-auto flex max-w-7xl justify-end">
           <div className="text-right">
             <p className="mb-5 text-[11px] tracking-[0.3em] text-grey sm:mb-6">
               COMING SOON
             </p>
-            <h1 className="font-sans text-[15vw] leading-[0.92] font-black tracking-tight text-white sm:text-[9vw] lg:text-[7.5rem]">
+            <h1 className="font-sans text-[14vw] leading-[0.92] font-black tracking-tight text-white sm:text-[9vw] lg:text-[7.5rem]">
               THEY SAID
               <br />
               YOU CAN&apos;T.

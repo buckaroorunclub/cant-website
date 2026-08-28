@@ -17,7 +17,7 @@ export default function StatementSequence() {
       </div>
 
       {/* Statement two — small, pushed right, drowned in negative space */}
-      <div className="flex justify-end px-5 py-32 sm:px-8 sm:py-48 lg:px-16 lg:py-56">
+      <div className="flex justify-end px-5 pt-16 pb-32 sm:px-8 sm:py-48 lg:px-16 lg:py-56">
         <Reveal className="max-w-[13rem] text-right sm:max-w-[22rem] lg:max-w-sm">
           <h3 className="text-2xl leading-snug font-semibold tracking-tight text-white sm:text-[2.2rem] lg:text-[2.6rem]">
             YOU CAN&apos;T BECOME UNFORGETTABLE TRYING TO FIT IN.

@@ -5,7 +5,7 @@ export default function FirstAccess() {
   return (
     <section
       id="first-access"
-      className="relative bg-charcoal px-5 pt-24 pb-28 sm:px-8 sm:pt-32 sm:pb-40"
+      className="relative bg-charcoal px-5 pt-24 pb-14 sm:px-8 sm:pt-32 sm:pb-40"
     >
       <div className="mx-auto max-w-4xl">
         <Reveal className="mb-10 flex items-center gap-4 sm:mb-14">

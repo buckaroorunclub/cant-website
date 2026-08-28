@@ -11,7 +11,7 @@ export default function Slogan() {
         </p>
         <p
           aria-hidden="true"
-          className="pointer-events-none -mt-1 -ml-1 -rotate-3 text-[17vw] leading-none text-white/95 sm:-mt-4 sm:text-8xl lg:text-9xl"
+          className="pointer-events-none -mt-1 -ml-1 -rotate-3 text-[15vw] leading-none text-white/95 sm:-mt-4 sm:text-8xl lg:text-9xl"
           style={{ fontFamily: "var(--font-marker)" }}
         >
           YOU CAN&apos;T.
