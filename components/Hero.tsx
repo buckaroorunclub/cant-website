@@ -25,9 +25,9 @@ export default function Hero() {
           width={2668}
           height={4000}
           priority
-          sizes="333vw"
+          sizes="260vw"
           className="absolute left-0 top-0 max-w-none grayscale sm:hidden"
-          style={{ width: "333%", height: "auto", transform: "translate(0%, -37%)" }}
+          style={{ width: "260%", height: "auto", transform: "translate(0%, -44%)" }}
         />
         {/* Vertical depth gradient (desktop/tablet) — mood + legibility */}
         <div className="absolute inset-0 hidden bg-gradient-to-t from-black via-black/30 to-black/10 sm:block" />
@@ -47,12 +47,12 @@ export default function Hero() {
               "linear-gradient(to right, transparent 0%, transparent 58%, rgba(0,0,0,0.92) 68%, black 76%, black 100%)",
           }}
         />
-        {/* Privacy gradient (mobile) — tuned separately for the vertical crop */}
+        {/* Privacy gradient (mobile) — pulled earlier to compensate for the wider reveal at reduced zoom, so only the founder and his chair clear the fade */}
         <div
           className="absolute inset-0 sm:hidden"
           style={{
             backgroundImage:
-              "linear-gradient(to right, transparent 0%, transparent 76%, rgba(0,0,0,0.92) 86%, black 92%, black 100%)",
+              "linear-gradient(to right, transparent 0%, transparent 72%, rgba(0,0,0,0.88) 82%, black 90%, black 100%)",
           }}
         />
       </div>
