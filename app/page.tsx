@@ -3,8 +3,8 @@ import Hero from "@/components/Hero";
 import Manifesto from "@/components/Manifesto";
 import Slogan from "@/components/Slogan";
 import PhotoInterrupt from "@/components/PhotoInterrupt";
+import Transition from "@/components/Transition";
 import StarSection from "@/components/StarSection";
-import StatementSequence from "@/components/StatementSequence";
 import ManifestoShirt from "@/components/ManifestoShirt";
 import FirstAccess from "@/components/FirstAccess";
 import Footer from "@/components/Footer";
@@ -18,8 +18,8 @@ export default function Home() {
         <Manifesto />
         <Slogan />
         <PhotoInterrupt />
+        <Transition />
         <StarSection />
-        <StatementSequence />
         <ManifestoShirt />
         <FirstAccess />
       </main>

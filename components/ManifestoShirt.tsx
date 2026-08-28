@@ -5,12 +5,10 @@ export default function ManifestoShirt() {
   return (
     <section className="relative border-b border-line bg-black px-5 pt-20 pb-14 sm:px-8 sm:pt-32 sm:pb-20 lg:px-16 lg:pt-40 lg:pb-24">
       <Reveal>
-        <h2 className="max-w-3xl text-[9vw] leading-[0.95] font-black uppercase tracking-tight text-white sm:text-6xl lg:text-7xl">
-          THIS WAS NEVER
+        <h2 className="max-w-3xl text-[7vw] leading-[0.95] font-black uppercase tracking-tight text-white sm:text-5xl lg:text-6xl">
+          THEY SAID YOU CAN&apos;T.
           <br />
-          JUST SOMETHING
-          <br />
-          TO SAY.
+          NOW WATCH.
         </h2>
       </Reveal>
 
@@ -26,11 +24,6 @@ export default function ManifestoShirt() {
             sizes="(min-width: 1024px) 52vw, (min-width: 640px) 68vw, 100vw"
             className="h-auto w-full grayscale"
           />
-        </Reveal>
-        <Reveal delay={200} className="mt-3 flex justify-end sm:mt-4">
-          <p className="text-[10px] tracking-[0.3em] text-grey sm:text-[11px]">
-            NOW YOU CAN WEAR IT.
-          </p>
         </Reveal>
       </div>
     </section>

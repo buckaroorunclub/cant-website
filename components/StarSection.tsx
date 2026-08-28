@@ -6,7 +6,7 @@ export default function StarSection() {
     <section className="relative h-[50vh] min-h-[380px] w-full overflow-hidden bg-black sm:h-[100vh]">
       <Reveal
         variant="scale"
-        className="pointer-events-none absolute -top-[13vw] -right-[16vw] h-[67vw] w-[67vw] text-white/90 sm:-top-[9vw] sm:-right-[8vw] sm:h-[50vw] sm:w-[50vw] lg:-top-[6vw] lg:-right-[6vw] lg:h-[36vw] lg:w-[36vw]"
+        className="pointer-events-none absolute -top-[9vw] -right-[11vw] h-[47vw] w-[47vw] text-white/90 sm:-top-[6vw] sm:-right-[6vw] sm:h-[35vw] sm:w-[35vw] lg:-top-[4vw] lg:-right-[4vw] lg:h-[25vw] lg:w-[25vw]"
       >
         <StarMark className="h-full w-full" />
       </Reveal>
@@ -14,11 +14,12 @@ export default function StarSection() {
       <div className="relative z-10 flex h-full flex-col justify-end px-5 pb-8 sm:px-8 sm:pb-24 lg:px-16">
         <Reveal delay={250} className="ml-5 -mt-5 max-w-[15rem] sm:max-w-md">
           <p className="text-3xl leading-[1.05] font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
-            THE STAR
+            NOT FOR
             <br />
-            ISN&apos;T GIVEN.
-            <br />
-            IT&apos;S EARNED.
+            EVERYONE.
+          </p>
+          <p className="mt-3 font-serif text-lg italic text-grey sm:mt-4 sm:text-xl">
+            Never was.
           </p>
         </Reveal>
       </div>
