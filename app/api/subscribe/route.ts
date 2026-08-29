@@ -15,32 +15,6 @@ type GraphQLResponse<T> = {
   errors?: Array<{ message: string }>;
 };
 
-async function getAccessToken(
-  storeDomain: string,
-  clientId: string,
-  clientSecret: string
-): Promise<string> {
-  const res = await fetch(`https://${storeDomain}/admin/oauth/access_token`, {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      grant_type: "client_credentials",
-      client_id: clientId,
-      client_secret: clientSecret,
-    }),
-  });
-
-  if (!res.ok) {
-    throw new Error(`token request failed (${res.status})`);
-  }
-
-  const data = (await res.json()) as { access_token?: string };
-  if (!data.access_token) {
-    throw new Error("token response missing access_token");
-  }
-  return data.access_token;
-}
-
 async function shopifyGraphQL<T>(
   storeDomain: string,
   accessToken: string,
@@ -91,17 +65,14 @@ export async function POST(request: Request) {
   }
 
   const storeDomain = process.env.SHOPIFY_STORE_DOMAIN;
-  const clientId = process.env.SHOPIFY_CLIENT_ID;
-  const clientSecret = process.env.SHOPIFY_CLIENT_SECRET;
+  const accessToken = process.env.SHOPIFY_ADMIN_ACCESS_TOKEN;
 
-  if (!storeDomain || !clientId || !clientSecret) {
-    console.error("subscribe: missing Shopify environment configuration");
+  if (!storeDomain || !accessToken) {
+    console.error("subscribe: missing SHOPIFY_STORE_DOMAIN or SHOPIFY_ADMIN_ACCESS_TOKEN");
     return NextResponse.json({ ok: false, error: GENERIC_ERROR }, { status: 500 });
   }
 
   try {
-    const accessToken = await getAccessToken(storeDomain, clientId, clientSecret);
-
     // Upsert by email only — no other fields are set, so no unrelated customer data
     // (name, address, notes, existing tags, etc.) is ever touched or overwritten.
     const setResult = await shopifyGraphQL<{
