@@ -2,7 +2,7 @@
 
 import { useId, useState, type FormEvent } from "react";
 
-type Status = "idle" | "invalid" | "submitting" | "success";
+type Status = "idle" | "invalid" | "submitting" | "success" | "error";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -11,20 +11,37 @@ export default function FirstAccessForm() {
   const [status, setStatus] = useState<Status>("idle");
   const inputId = useId();
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!EMAIL_PATTERN.test(email.trim())) {
+    if (status === "submitting") return;
+
+    const trimmed = email.trim();
+    if (!EMAIL_PATTERN.test(trimmed)) {
       setStatus("invalid");
       return;
     }
 
     setStatus("submitting");
 
-    // Simulated success — no backend wired up yet.
-    window.setTimeout(() => {
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: trimmed }),
+      });
+
+      const data = (await res.json().catch(() => null)) as { ok?: boolean } | null;
+
+      if (!res.ok || !data?.ok) {
+        setStatus("error");
+        return;
+      }
+
       setStatus("success");
-    }, 900);
+    } catch {
+      setStatus("error");
+    }
   };
 
   if (status === "success") {
@@ -35,6 +52,8 @@ export default function FirstAccessForm() {
       </div>
     );
   }
+
+  const hasError = status === "invalid" || status === "error";
 
   return (
     <form onSubmit={handleSubmit} noValidate className="w-full max-w-md">
@@ -50,14 +69,14 @@ export default function FirstAccessForm() {
           placeholder="YOUR EMAIL"
           value={email}
           disabled={status === "submitting"}
-          aria-invalid={status === "invalid"}
-          aria-describedby={status === "invalid" ? `${inputId}-error` : undefined}
+          aria-invalid={hasError}
+          aria-describedby={hasError ? `${inputId}-error` : undefined}
           onChange={(event) => {
             setEmail(event.target.value);
-            if (status === "invalid") setStatus("idle");
+            if (hasError) setStatus("idle");
           }}
           className={`w-full border bg-transparent px-4 py-4 text-base tracking-[0.05em] text-white placeholder:text-grey-dim focus:outline-none disabled:opacity-50 sm:py-3.5 sm:text-sm ${
-            status === "invalid" ? "border-white" : "border-line-strong focus:border-white"
+            hasError ? "border-white" : "border-line-strong focus:border-white"
           }`}
         />
         <button
@@ -72,10 +91,10 @@ export default function FirstAccessForm() {
         id={`${inputId}-error`}
         role="alert"
         className={`mt-3 text-xs tracking-[0.1em] text-white/80 transition-opacity ${
-          status === "invalid" ? "opacity-100" : "pointer-events-none opacity-0"
+          hasError ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        ENTER A VALID EMAIL.
+        {status === "error" ? "SOMETHING WENT WRONG. PLEASE TRY AGAIN." : "ENTER A VALID EMAIL."}
       </p>
     </form>
   );
